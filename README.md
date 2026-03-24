@@ -84,13 +84,13 @@ groq-adaptive-web-agent/
 Download and install from [ollama.com/download](https://ollama.com/download), then open PowerShell and pull the tool-use model:
 
 ```powershell
-ollama pull llama3-groq-tool-use-8b
+ollama pull llama3-groq-tool-use:8b
 ```
 
 Wait for the download to complete. Verify it works:
 
 ```powershell
-ollama run llama3-groq-tool-use-8b "say hello"
+ollama run llama3-groq-tool-use:8b "say hello"
 ```
 
 ### 2. Clone the repository
@@ -195,10 +195,10 @@ Example output:
 ## Design Decisions
 
 **Why Ollama instead of a cloud API?**
-Ollama runs inference locally — no latency from network calls, no usage costs, no data sent to a third party. The `llama3-groq-tool-use-8b` model is Groq's open-weight tool-calling model, which means you get the same tool-calling capability entirely on your own hardware for free.
+Ollama runs inference locally — no latency from network calls, no usage costs, no data sent to a third party. The `llama3-groq-tool-use:8b` model is Groq's open-weight tool-calling model, which means you get the same tool-calling capability entirely on your own hardware for free.
 
 **Why the Groq tool-use model specifically?**
-Most general-purpose models handle tool-calling unreliably through prompt engineering. The `llama3-groq-tool-use-8b` model is fine-tuned specifically for structured function-calling — it produces consistent, parseable tool invocations rather than freeform text guesses.
+Most general-purpose models handle tool-calling unreliably through prompt engineering. The `llama3-groq-tool-use:8b` model is fine-tuned specifically for structured function-calling — it produces consistent, parseable tool invocations rather than freeform text guesses.
 
 **Why nodriver over Selenium or Playwright?**
 nodriver is undetected by anti-bot systems, making it significantly more reliable for scraping platforms like Amazon that actively block headless browsers.
