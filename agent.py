@@ -107,7 +107,7 @@ async def run(query: str):
         step["messages"][-1].pretty_print()
 
 if __name__ == "__main__":
-    nodriver.loop().run_until_complete(run("search online who is the president of USA?"))
+    nodriver.loop().run_until_complete(run("who are you?"))
 
 #Tip: If you want the model to search online for a particular information prefix your prompt with "Search online"
 #Example if you want to know the recent news in AI, the use this: Search online for the recent AI news
